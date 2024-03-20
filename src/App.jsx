@@ -10,8 +10,8 @@ function App() {
 
   return (
     <>
+      <Header />
       <Container>
-        <Header />
         <Todo />
       </Container>
     </>
