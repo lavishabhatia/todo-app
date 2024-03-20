@@ -15,7 +15,7 @@ import Button from "../../ui/Button";
 
 function TodoItem({ item, onComplete, onDelete, onChange }) {
   const [edit, setEdit] = useState();
-  const [todo, setTodo] = useState();
+  const [todo, setTodo] = useState(item?.name);
 
   return (
     <TableRow>
@@ -23,7 +23,7 @@ function TodoItem({ item, onComplete, onDelete, onChange }) {
         <Checkbox checked={item?.completed} onClick={() => onComplete(item?.id)} />
         {edit ? (
           <TextArea
-            defaultValue={item?.name}
+            defaultValue={todo}
             onChange={(e) => setTodo(e.target.value)}
           />
         ) : (
